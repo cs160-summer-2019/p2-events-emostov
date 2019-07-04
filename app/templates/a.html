@@ -63,8 +63,38 @@
 
 
 <script type="text/javascript">
-	// your solution here
-
+	const $purpleBubbles = $('div.p2-circle.bg-purple');
+  const $blueBubbles = $('div.p2-circle.bg-blue');
+  const $greenBubbles = $('div.p2-circle.bg-green');
+  const $orangeBubbles = $('div.p2-circle.bg-orange');
+  const $orangeBorderBubbles = $('div.p2-circle.bg-orange.p2-border');
+  const $gradientCircle = $('#gradient-circle');
+  const $resetButton = $('.btn');
+  
+  $purpleBubbles.on('click', () => {
+    $purpleBubbles.hide();
+  })
+  
+  $greenBubbles.on('click', () => {
+    $blueBubbles.hide();
+    $greenBubbles.hide();
+  })
+  
+  $orangeBorderBubbles.on('click', () => {
+    $orangeBorderBubbles.hide();
+  })
+  
+  $gradientCircle.on('mouseover', () => {
+    $gradientCircle.hide();
+  })
+  
+  $resetButton.on('click', ()=> {
+    $gradientCircle.show();
+    $orangeBorderBubbles.show();
+    $blueBubbles.show();
+    $greenBubbles.show();
+    $purpleBubbles.show();
+  })
 </script>
 </body>
 </html>
