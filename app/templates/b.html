@@ -21,7 +21,8 @@
 				<h3>Task 1b</h3>
 			</div>
 			<div class="col-6">
-				<button class="btn btn-light float-right">
+				<button onClick='clearInterval(myVar)' 
+                class="btn btn-light float-right">
 					Stop
 				</button>
 			</div>
@@ -39,8 +40,16 @@
 
 
 <script type="text/javascript">
-
-	// your solution here
+  const $shapeContainer = $('.shape-container');
+  const $stop = $('.btn');
+  const $newCircle = $('<div class="p2-circle bg-blue"></div>');
+  function myTimer(){
+    $shapeContainer.append($newCircle);
+  }
+  
+  $(document).ready(()=>{
+    var myVar = setInterval(myTimer, 1000);
+  })
 
 </script>
 </body>

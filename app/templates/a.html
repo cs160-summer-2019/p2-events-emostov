@@ -70,31 +70,34 @@
   const $orangeBorderBubbles = $('div.p2-circle.bg-orange.p2-border');
   const $gradientCircle = $('#gradient-circle');
   const $resetButton = $('.btn');
-  
-  $purpleBubbles.on('click', () => {
-    $purpleBubbles.hide();
+  $(document).ready(()=>{
+    $purpleBubbles.on('click', () => {
+      $purpleBubbles.hide();
+    })
+
+    $greenBubbles.on('click', () => {
+      $blueBubbles.hide();
+      $greenBubbles.hide();
+    })
+
+    $orangeBorderBubbles.on('click', () => {
+      $orangeBorderBubbles.hide();
+    })
+
+    $gradientCircle.on('mouseover', () => {
+      $gradientCircle.hide();
+    })
+
+    $resetButton.on('click', ()=> {
+      $gradientCircle.show();
+      $orangeBorderBubbles.show();
+      $blueBubbles.show();
+      $greenBubbles.show();
+      $purpleBubbles.show();
+    })
   })
   
-  $greenBubbles.on('click', () => {
-    $blueBubbles.hide();
-    $greenBubbles.hide();
-  })
   
-  $orangeBorderBubbles.on('click', () => {
-    $orangeBorderBubbles.hide();
-  })
-  
-  $gradientCircle.on('mouseover', () => {
-    $gradientCircle.hide();
-  })
-  
-  $resetButton.on('click', ()=> {
-    $gradientCircle.show();
-    $orangeBorderBubbles.show();
-    $blueBubbles.show();
-    $greenBubbles.show();
-    $purpleBubbles.show();
-  })
 </script>
 </body>
 </html>
