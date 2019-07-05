@@ -21,7 +21,7 @@
 				<h3>Task 1b</h3>
 			</div>
 			<div class="col-6">
-				<button onClick='clearInterval(myVar)' 
+				<button onClick="stopTimer()"
                 class="btn btn-light float-right">
 					Stop
 				</button>
@@ -40,17 +40,29 @@
 
 
 <script type="text/javascript">
-  const $shapeContainer = $('.shape-container');
-  const $stop = $('.btn');
-  const $newCircle = $('<div class="p2-circle bg-blue"></div>');
-  function myTimer(){
-    $shapeContainer.append($newCircle);
+  
+//   $(document).ready(()=>{
+    const shapeContainer = $('.shape-container');
+    const stop = $('.btn');
+    var intervalHandle;
+    
+    function addCircle(){
+      console.log("inside of add circle");
+      shapeContainer.append('<div class="p2-circle bg-blue"></div>');
+    }
+    
+//     var intervalHandle = setInterval(()=>{ console.log("inside set interval"), addCircle()}, 1000);
+
+      var intervalHandle = setInterval(addCircle, 1000);
+
+
+//   })
+  
+  function stopTimer(){
+    console.log("inside of stop timer");
+    clearInterval(intervalHandle);
   }
   
-  $(document).ready(()=>{
-    var myVar = setInterval(myTimer, 1000);
-  })
-
 </script>
 </body>
 </html>
